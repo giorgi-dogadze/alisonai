@@ -68,6 +68,18 @@
   }
 }
 
+@layer utilities {
+  .scrollbar-gutter-stable {
+    scrollbar-gutter: stable;
+  }
+}
+
+/* Prevent layout shift from scrollbar */
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

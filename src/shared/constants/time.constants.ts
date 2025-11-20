@@ -1,0 +1,23 @@
+export const TIME_CONSTANTS = {
+  RELATIVE_TIME_UPDATE_INTERVAL: 1000,
+  JUST_NOW_THRESHOLD: 5000,
+  SECONDS_PER_MINUTE: 60,
+  MS_PER_SECOND: 1000,
+  MS_PER_MINUTE: 60 * 1000,
+  MS_PER_HOUR: 60 * 60 * 1000,
+} as const;
+
+export const USER_ACTIVITY_CONSTANTS = {
+  HEARTBEAT_INTERVAL: 5000,
+  INACTIVE_THRESHOLD: 60000,
+  CLEANUP_INTERVAL: 10000,
+  TYPING_TIMEOUT: 2000,
+} as const;
+
+export type TimeUnit = 'seconds' | 'minutes' | 'hours';
+
+export const TIME_UNIT_MULTIPLIERS: Record<TimeUnit, number> = {
+  seconds: TIME_CONSTANTS.MS_PER_SECOND,
+  minutes: TIME_CONSTANTS.MS_PER_MINUTE,
+  hours: TIME_CONSTANTS.MS_PER_HOUR,
+} as const;
